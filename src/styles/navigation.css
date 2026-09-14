@@ -1,0 +1,222 @@
+﻿/* Navigation Bar mirroring meetshahbaz.pk */
+.nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background: rgba(18, 17, 35, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+.nav-content {
+  max-width: var(--container-max-width);
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo Code Bracket Styling */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 1.12rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  user-select: none;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text-group {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.logo-bracket {
+  color: var(--cyan-light);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.logo-main {
+  display: flex;
+  align-items: center;
+}
+
+.logo-function {
+  color: var(--primary-light);
+}
+
+.logo-dot {
+  color: var(--text-muted);
+}
+
+.logo-name {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.logo-domain {
+  color: var(--cyan);
+}
+
+/* Desktop Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.nav-link {
+  position: relative;
+  font-size: 0.94rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 0.5rem 0;
+  transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-primary);
+}
+
+.nav-link-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-bluish);
+  transition: width 0.25s ease;
+  border-radius: 2px;
+}
+
+.nav-link:hover .nav-link-line,
+.nav-link.active .nav-link-line {
+  width: 100%;
+}
+
+/* Header Contact Button */
+.nav-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.25rem;
+  background: var(--gradient-bluish);
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+  transition: var(--transition);
+}
+
+.nav-contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.45);
+}
+
+/* Mobile Hamburger */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 20px;
+}
+
+.menu-icon span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* Mobile Menu Overlay & Drawer */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  width: 100%;
+  background: rgba(18, 17, 35, 0.97);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.5rem 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.mobile-nav.open {
+  display: block;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.5rem;
+  gap: 1rem;
+}
+
+.mobile-nav-link {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mobile-nav-link.active,
+.mobile-nav-link:hover {
+  color: var(--cyan-light);
+}
+
+.mobile-nav-contact-btn {
+  margin-top: 0.75rem;
+  width: 100%;
+  text-align: center;
+  padding: 0.75rem;
+  background: var(--gradient-bluish);
+  color: white;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 860px) {
+  .nav-links {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: flex;
+  }
+}

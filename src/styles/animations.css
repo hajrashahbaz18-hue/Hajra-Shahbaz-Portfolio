@@ -1,0 +1,420 @@
+/* 
+ * Professional Animations & Micro-Interactions
+ * Sleek, high-performance developer aesthetic matching modern portfolios
+ */
+
+/* 1. Ambient Background Floating Glow Orbs */
+.ambient-glow-1 {
+  position: absolute;
+  top: -100px;
+  right: -50px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, rgba(6, 182, 212, 0.05) 50%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(60px);
+  animation: floatOrb 14s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+.ambient-glow-2 {
+  position: absolute;
+  bottom: 0px;
+  left: -80px;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, rgba(37, 99, 235, 0.05) 50%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(60px);
+  animation: floatOrbReverse 16s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(40px, 60px) scale(1.1); }
+  100% { transform: translate(-30px, 30px) scale(0.95); }
+}
+
+@keyframes floatOrbReverse {
+  0% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(-40px, -50px) scale(1.12); }
+  100% { transform: translate(30px, -20px) scale(0.9); }
+}
+
+/* 2. Holographic Glow & Wave Physics on Name */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 2. Premium Aurora Neon Typography for Hero Name */
+@keyframes neonAurora {
+  0% {
+    background-position: 0% 50%;
+    filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.45)) drop-shadow(0 0 35px rgba(37, 99, 235, 0.3));
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: drop-shadow(0 0 24px rgba(34, 211, 238, 0.7)) drop-shadow(0 0 55px rgba(124, 58, 237, 0.45));
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.45)) drop-shadow(0 0 35px rgba(37, 99, 235, 0.3));
+  }
+}
+
+.hero-name-bold {
+  display: inline-flex;
+  align-items: center;
+  font-size: 4.4rem;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.hero-name-first {
+  background: linear-gradient(135deg, #FFFFFF 20%, #E0E7FF 60%, #93C5FD 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+  margin-right: 0.35em;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.hero-name-last {
+  background: linear-gradient(
+    90deg, 
+    #38BDF8 0%, 
+    #60A5FA 25%, 
+    #A78BFA 50%, 
+    #22D3EE 75%, 
+    #38BDF8 100%
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+  animation: neonAurora 5s ease-in-out infinite;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-name-bold:hover .hero-name-first {
+  transform: translateY(-3px) scale(1.02);
+}
+
+.hero-name-bold:hover .hero-name-last {
+  transform: translateY(-3px) scale(1.03);
+}
+
+/* Individual letter spring wave hover */
+.animated-letter {
+  display: inline-block;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.25s ease;
+}
+
+.animated-letter:hover {
+  transform: translateY(-12px) scale(1.22) rotate(-3deg);
+  filter: drop-shadow(0 0 16px #38BDF8) brightness(1.25);
+}
+
+/* Developer decorative tag badge next to name */
+.name-decor-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--cyan-light);
+  background: rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  border-radius: var(--radius-full);
+  padding: 0.25rem 0.75rem;
+  margin-left: 1rem;
+  vertical-align: middle;
+  box-shadow: 0 0 15px rgba(37, 99, 235, 0.3);
+  animation: pulse 2.5s infinite;
+}
+
+/* 2.1 Code Function Typewriter Line */
+.typewriter-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
+  background: rgba(18, 17, 35, 0.6);
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  width: fit-content;
+}
+
+.typewriter-keyword {
+  color: #F43F5E; /* Pink function keyword */
+  font-weight: 600;
+}
+
+.typewriter-text {
+  color: #10B981; /* Green identifier */
+  font-weight: 600;
+  min-height: 1.5rem;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 9px;
+  height: 1.25rem;
+  background: #FFFFFF;
+  margin-left: 2px;
+  animation: cursorBlink 0.9s step-end infinite;
+  vertical-align: middle;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Status Pill with Green Dot */
+.hero-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 1.1rem;
+  background: rgba(26, 28, 58, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.status-green-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 10px #10B981;
+  animation: pulseGreen 2s infinite;
+}
+
+@keyframes pulseGreen {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* 3. Hero Entrance Animations */
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: slideUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-1 { animation-delay: 0.12s; }
+.delay-2 { animation-delay: 0.24s; }
+.delay-3 { animation-delay: 0.36s; }
+.delay-4 { animation-delay: 0.48s; }
+.delay-5 { animation-delay: 0.6s; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 4. Terminal Interactive Hover & Subtle Float */
+.terminal-float {
+  animation: terminalHover 6s ease-in-out infinite alternate;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.terminal-float:hover {
+  transform: translateY(-8px) scale(1.01) !important;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(37, 99, 235, 0.25);
+}
+
+@keyframes terminalHover {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-10px); }
+}
+
+/* 5. Terminal Typing Blink */
+.typing-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background: var(--cyan-light);
+  margin-left: 6px;
+  vertical-align: middle;
+  animation: blinkCursor 1s step-end infinite;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* 6. Card Spotlight Hover & Glowing Border Effect */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+  border-color: rgba(59, 130, 246, 0.45);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 0 25px rgba(56, 189, 248, 0.15);
+}
+
+/* Shimmer shine line across cards on hover */
+.hover-lift::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.04) 50%,
+    transparent 60%
+  );
+  transform: rotate(25deg) translateY(-100%);
+  transition: transform 0.8s ease;
+  pointer-events: none;
+}
+
+.hover-lift:hover::after {
+  transform: rotate(25deg) translateY(100%);
+}
+
+/* 7. Skill Pill Hover Pulse */
+.skill-pill {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skill-pill:hover {
+  transform: translateY(-2px) scale(1.04);
+  background: rgba(37, 99, 235, 0.2);
+  border-color: rgba(56, 189, 248, 0.5);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+/* 8. Button Magnetic/Glow Ripple Hover */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, transparent 60%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease;
+  pointer-events: none;
+}
+
+.btn-primary:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* 9. Scroll Indicator Mouse Bounce */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.scroll-indicator:hover {
+  opacity: 1;
+}
+
+.mouse-wheel {
+  width: 20px;
+  height: 32px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  position: relative;
+}
+
+.mouse-wheel::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  width: 3px;
+  height: 6px;
+  background: var(--cyan-light);
+  border-radius: 2px;
+  transform: translateX(-50%);
+  animation: scrollMouse 1.8s infinite;
+}
+
+@keyframes scrollMouse {
+  0% { transform: translate(-50%, 0); opacity: 1; }
+  60% { transform: translate(-50%, 10px); opacity: 0; }
+  100% { transform: translate(-50%, 0); opacity: 0; }
+}
+
+/* 10. Tag Badge Subtle Glow */
+.project-category {
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover .project-category {
+  transform: scale(1.03);
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.4);
+}
